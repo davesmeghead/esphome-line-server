@@ -59,7 +59,7 @@ void LineServerComponent::loop() {
 
 void LineServerComponent::dump_config() {
   ESP_LOGCONFIG(TAG, "Line Server:");
-  ESP_LOGCONFIG(TAG, "- Listening on: %s:%u", esphome::network::get_use_address().c_str(), this->port_);
+  ESP_LOGCONFIG(TAG, "- Listening on: %s:%u", esphome::network::get_use_address(), this->port_);
   ESP_LOGCONFIG(TAG, "- UART buffer: size=%zu, terminator=%s",
       uart_buf_size_,
       esphome::format_hex_pretty((const uint8_t*)uart_terminator_.data(), uart_terminator_.size()).c_str());
